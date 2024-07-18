@@ -15,10 +15,11 @@ const SearchBar = () => {
     <>
       <div className="relative">
         <input
-          className="w-full rounded-lg bg-inputColor px-5 py-3.5 text-base mt-14 text-inputTextColor border-none outline-none focus:outline-headingColor focus:transition ease-out duration-300"
+          className="w-full rounded-lg bg-inputColor px-5 py-[17px] text-base mt-14 text-inputTextColor font-normal border-none outline-none focus:outline-headingColor focus:transition ease-out duration-300"
           type="text"
           placeholder="Search Location"
           value={state}
+          maxLength={45}
           onChange={handleChange}
         />
         {isLoading && (

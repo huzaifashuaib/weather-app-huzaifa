@@ -55,7 +55,7 @@ const WeatherDetail = ({ lat, lon }: { lat: string; lon: string }) => {
 
           <div className="w-full">
             <input
-              className="w-full rounded-lg bg-inputColor px-5 py-3.5 text-base  text-inputTextColor border-none outline-none focus:outline-headingColor focus:transition ease-out duration-300"
+              className="w-full rounded-lg bg-inputColor px-5 py-[17px] text-base  text-inputTextColor border-none outline-none focus:outline-headingColor focus:transition ease-out duration-300"
               type="text"
               name=""
               id=""
