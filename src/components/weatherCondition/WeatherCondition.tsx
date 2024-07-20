@@ -16,7 +16,7 @@ const WeatherCondition = ({ lat, lon }: { lat: string; lon: string }) => {
 
   return (
     <>
-      <div className="bg-baseColor rounded-xl px-4 md:pt-7 md:p-6 mb:pb-2 mb-2 md:mb-0 h-[292px] md:h-[398px]">
+      <div className="bg-baseColor rounded-xl px-4 py-[4px] sm:py-0 md:pt-7 md:p-6 mb:pb-2 mb-2 md:mb-0 h-[300px] md:h-[398px]">
         <p className=" hidden md:block text-base font-normal text-inputTextColor pb-5">
           Today's weather details
         </p>
@@ -32,7 +32,7 @@ const WeatherCondition = ({ lat, lon }: { lat: string; lon: string }) => {
               </p>
             </div>
             <div>
-              <p className="text-textColor text-sm md:text-xl font-bold">
+              <p className="text-textColor text-base sm:text-sm md:text-xl font-bold">
                 {feelLike !== undefined
                   ? Math.floor(kelvinToCelsius(feelLike))
                   : "Loading..."}
@@ -53,7 +53,7 @@ const WeatherCondition = ({ lat, lon }: { lat: string; lon: string }) => {
               </p>
             </div>
             <div>
-              <p className="text-textColor text-sm md:text-xl font-bold">0%</p>
+              <p className="text-textColor text-base sm:text-sm md:text-xl  font-bold">0%</p>
             </div>
           </div>
         </div>
@@ -69,7 +69,7 @@ const WeatherCondition = ({ lat, lon }: { lat: string; lon: string }) => {
               </p>
             </div>
             <div>
-              <p className="text-textColor text-sm md:text-xl font-bold">
+              <p className="text-textColor text-base sm:text-sm md:text-xl font-bold">
                 {feelLike
                   ? Math.floor(windSpeedConversion(pressure))
                   : "Loading..."}{" "}
@@ -90,7 +90,7 @@ const WeatherCondition = ({ lat, lon }: { lat: string; lon: string }) => {
               </p>
             </div>
             <div>
-              <p className="text-textColor text-sm md:text-xl font-bold">
+              <p className="text-textColor text-base sm:text-sm md:text-xl font-bold">
                 {windHumidity}%
               </p>
             </div>
@@ -106,7 +106,7 @@ const WeatherCondition = ({ lat, lon }: { lat: string; lon: string }) => {
               <p className="text-subHeadingColor text-sm font-bold">UV Index</p>
             </div>
             <div>
-              <p className="text-textColor text-sm md:text-xl font-bold">5</p>
+              <p className="text-textColor text-base sm:text-sm md:text-xl font-bold">5</p>
             </div>
           </div>
         </div>

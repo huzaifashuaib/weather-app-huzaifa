@@ -15,7 +15,9 @@ export default {
       colors:COLORS,
       backgroundImage:backImages,
       fontFamily:customFontFamily,
-    
+      screens:{
+        small:'400px'
+      }
     },
   },
   plugins: [

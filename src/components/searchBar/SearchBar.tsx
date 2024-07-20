@@ -15,7 +15,7 @@ const SearchBar = () => {
     <>
       <div className="relative">
         <input
-          className="w-full rounded-lg bg-inputColor px-5 py-[17px] text-base mt-14 text-inputTextColor font-normal border-none outline-none focus:outline-headingColor focus:transition ease-out duration-300"
+          className="w-full  rounded-lg bg-inputColor px-5 py-[17px] text-base mt-8 sm:mt-14 text-inputTextColor font-normal border-none outline-none focus:outline-headingColor focus:transition ease-out duration-300"
           type="text"
           placeholder="Search Location"
           value={state}
@@ -23,7 +23,7 @@ const SearchBar = () => {
           onChange={handleChange}
         />
         {isLoading && (
-          <div className="absolute top-[3.5rem] bottom-[0.25rem] right-2 flex items-center pr-3">
+          <div className="absolute top-[3rem] sm:top-[3.5rem] sm:bottom-[0.25rem] right-2 flex items-center pr-3">
             <img
               src={loader}
               alt="Loading..."
@@ -41,7 +41,7 @@ const SearchBar = () => {
           <li
             onClick={() => onOptionSelect(city)}
             key={`${city?.name}${city?.country}`}
-            className="bg-option cursor-pointer h-[54px] w-[504px] text-white px-4 py-5  text-[16px] font-normal border-b border-inputColor"
+            className="bg-option cursor-pointer flex items-center text-white px-4 py-5 text-[16px] font-normal border-b border-inputColor"
           >
             <button>
               {" "}

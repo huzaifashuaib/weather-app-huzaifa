@@ -24,14 +24,31 @@ const useForcastWeather = ( lat:string|null, lon:string|null ) => {
     "Saturday",
   ];
 
-  const getForecastDaysName = (dt: number): string => {
+  const weekDaysShort: string[] = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+  ];
+
+  const getForecastDaysName = (dt: number,dayName: string): string => {
     const currentDate = new Date();
     const currentDay = currentDate.getDate();
     currentDate.setDate(currentDay + 1);
-    const upComingDay = weekDays[currentDate.getDay()];
-    const forecastDay = weekDays[new Date(dt * 1000).getDay()];
-    if (upComingDay == forecastDay) return "Tomorrow";
-    return forecastDay;
+    if(dayName=="full"){
+      const upComingDay = weekDays[currentDate.getDay()];
+      const forecastDay = weekDays[new Date(dt * 1000).getDay()];
+      if (upComingDay == forecastDay) return "Tomorrow";
+      return forecastDay;
+    }
+    else{
+      const forecastDay = weekDaysShort[new Date(dt * 1000).getDay()];
+      return forecastDay;
+
+    }
   };
 
   const {
