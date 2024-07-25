@@ -1,10 +1,11 @@
 import { useState, useEffect, ChangeEvent } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import { getOptionStart, getOptions } from "../../store/slices/optionSlice";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { City } from "../../type/types";
 
 const useSearchHook = () => {
+  const location = useLocation();
   const [state, setState] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isOptionVisible, setOptionVisible] = useState(true);
@@ -38,14 +39,21 @@ const useSearchHook = () => {
     const valueInput = `${name} ${country}`;
     setState(valueInput);
     setOptionVisible(false);
-
+    clearSuggestion()
     setTimeout(() => {
+      if (location.pathname == "/detail") {
+        console.log("first");
+        navigate(`?lat=${lat}&lon=${lon}`);
+        return;
+      }
       navigate(`detail?lat=${lat}&lon=${lon}`);
     }, 1000);
   };
 
   const clearSuggestion = () => {
-
+    setState("")
+    setOptionVisible(false)
+    dispatch(getOptionStart())
   };
 
   return {

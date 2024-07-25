@@ -1,4 +1,5 @@
 import WeatherLogo from "../../assets/images/WeatherLogo.png";
+import SearchBar from "../searchBar/SearchBar";
 import useWeatherDetail from "./useWeatherDetail";
 
 const WeatherDetail = ({ lat, lon }: { lat: string; lon: string }) => {
@@ -31,9 +32,7 @@ const WeatherDetail = ({ lat, lon }: { lat: string; lon: string }) => {
     getIcon,
     setCel,
     setFah,
-
-  }=useWeatherDetail(lat,lon)
- 
+  } = useWeatherDetail(lat, lon);
 
   return (
     <>
@@ -54,13 +53,9 @@ const WeatherDetail = ({ lat, lon }: { lat: string; lon: string }) => {
           </label>
 
           <div className="w-full">
-            <input
-              className="w-full rounded-lg bg-inputColor px-5 py-[17px] text-base  text-inputTextColor border-none outline-none focus:outline-headingColor focus:transition ease-out duration-300"
-              type="text"
-              name=""
-              id=""
-              placeholder="search"
-            />
+            <div>
+              <SearchBar />
+            </div>
           </div>
         </div>
 

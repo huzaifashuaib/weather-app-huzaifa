@@ -20,7 +20,9 @@ function Home() {
               Choose a location to see weather forecast
             </p>
           </div>
-          <SearchBar />
+          <div className="mt-8 sm:mt-14">
+            <SearchBar />
+          </div>
         </section>
       </main>
     </div>
